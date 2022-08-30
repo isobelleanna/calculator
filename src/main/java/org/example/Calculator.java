@@ -20,7 +20,7 @@ public class Calculator {
         while (isActive) {
             userInput.printMessage("Enter a number");
             num2 = userInput.getNumber();
-            userInput.printMessage("Enter operator(+*/-=)");
+            userInput.printMessage("Enter operator(+*/-=**s)");
             operator = userInput.getOperator();
             calculate(o, num2);
             userInput.printMessage("continue [y/n]");
@@ -33,7 +33,6 @@ public class Calculator {
     }
 
     public void calculate(int num1, int num2){
-
         switch (operator){
             case "+":
                 o = num1 + num2;
@@ -46,6 +45,12 @@ public class Calculator {
                 break;
             case "/":
                 o = num1 / num2;
+                break;
+            case "**":
+                o = (int) Math.pow(num1, num2);
+                break;
+            case "s":
+                o = (int) Math.sqrt(num1);
                 break;
             default:
                 userInput.printMessage("Not an operator");
